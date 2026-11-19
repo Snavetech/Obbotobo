@@ -1,0 +1,1479 @@
+/* ==========================================================================
+   Anniversary Games Section — Luxury Antique Gold & Espresso Styling
+   ========================================================================== */
+
+.scene-games {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: auto !important;
+  z-index: 15;
+}
+
+.games-hub-container {
+  width: min(920px, calc(100vw - 28px));
+  margin: 0 auto;
+  padding: clamp(84px, 12vh, 105px) 8px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Games Directory Header & Prominent Games List */
+.games-directory-panel {
+  width: 100%;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.games-directory-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 2px;
+}
+
+.games-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.games-ornament {
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.games-nav-title {
+  color: var(--gold);
+  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.games-back-btn {
+  font-size: 0.72rem;
+  color: rgba(244, 235, 221, 0.7);
+  letter-spacing: 0.05em;
+  transition: color 180ms ease;
+}
+
+.games-back-btn:hover {
+  color: var(--gold);
+}
+
+/* Prominent Games List / Cards */
+.games-list-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.game-list-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 18px 20px 16px;
+  background: rgba(22, 16, 12, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 220ms cubic-bezier(0.2, 0.8, 0.25, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-list-card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  background: rgba(36, 26, 18, 0.92);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.game-list-card.is-active {
+  border-color: var(--gold);
+  background: linear-gradient(145deg, rgba(46, 32, 22, 0.95), rgba(26, 18, 13, 0.95));
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.game-list-card.is-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+}
+
+.card-num-badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.card-game-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--ivory);
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+
+.card-game-desc {
+  font-size: 0.72rem;
+  color: rgba(244, 235, 221, 0.65);
+  line-height: 1.45;
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.card-status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.status-indicator-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(244, 235, 221, 0.3);
+  transition: all 200ms ease;
+}
+
+.game-list-card.is-active .status-indicator-dot {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+.status-indicator-text {
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(244, 235, 221, 0.5);
+  font-weight: 500;
+}
+
+.game-list-card.is-active .status-indicator-text {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Arena Container */
+.game-arena-slot {
+  width: 100%;
+}
+
+.game-wrapper {
+  position: relative;
+  width: 100%;
+  background: rgba(18, 13, 10, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  border-radius: 8px;
+  padding: clamp(20px, 4vh, 36px) clamp(16px, 3.5vw, 32px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.85),
+    0 0 35px rgba(212, 175, 55, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Common Header Bar */
+.game-header-bar {
+  margin-bottom: 22px;
+}
+
+.game-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 14px;
+  color: var(--gold);
+  font-family: "Inter", sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.game-headline {
+  margin: 0 0 8px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 3.8vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.game-subtext {
+  margin: 0 auto;
+  max-width: 580px;
+  color: rgba(244, 235, 221, 0.68);
+  font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+  line-height: 1.55;
+}
+
+/* Buttons */
+.gold-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 26px;
+  background: var(--gold);
+  color: #120e0b;
+  border: 1px solid var(--gold);
+  border-radius: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 220ms ease;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+}
+
+.gold-pill-btn:hover {
+  transform: translateY(-2px);
+  background: #deb842;
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5);
+}
+
+.gold-ghost-btn,
+.gold-ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 220ms ease;
+}
+
+.gold-ghost-btn:hover,
+.gold-ghost-button:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.subtle-link-btn,
+.subtle-link-button {
+  background: transparent;
+  border: 0;
+  color: rgba(244, 235, 221, 0.55);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 180ms ease;
+}
+
+.subtle-link-btn:hover,
+.subtle-link-button:hover {
+  color: var(--gold);
+}
+
+/* ==========================================================================
+   1. TIC TAC TOE STYLES
+   ========================================================================== */
+.tictactoe-game {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.game-controls-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.control-segmented-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22, 16, 12, 0.7);
+  padding: 4px 10px;
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.control-group-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(244, 235, 221, 0.6);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.mode-selector {
+  display: inline-flex;
+  background: rgba(30, 20, 15, 0.85);
+  padding: 3px;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.mode-pill {
+  padding: 6px 16px;
+  border-radius: 16px;
+  background: transparent;
+  border: 0;
+  color: rgba(244, 235, 221, 0.65);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.mode-pill.is-active {
+  background: var(--gold);
+  color: #140e0c;
+  font-weight: 600;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.score-card {
+  flex: 1;
+  max-width: 140px;
+  padding: 10px 8px;
+  background: rgba(28, 20, 15, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 220ms ease;
+}
+
+.score-card.is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.score-avatar {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.player-s .score-avatar {
+  color: #e2a876;
+}
+
+.score-name {
+  font-size: 0.58rem;
+  color: rgba(244, 235, 221, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.score-count {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--ivory);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.turn-indicator {
+  min-height: 32px;
+  margin-bottom: 18px;
+  color: rgba(244, 235, 221, 0.85);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+.turn-highlight {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.turn-highlight.winner-glow {
+  font-size: 1.05rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  text-shadow: 0 0 16px rgba(212, 175, 55, 0.6);
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(340px, 86vw);
+  height: min(340px, 86vw);
+  margin: 0 auto 22px;
+}
+
+.ttt-cell {
+  position: relative;
+  background: rgba(28, 20, 16, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 180ms ease;
+  user-select: none;
+}
+
+.ttt-cell:hover:not(:disabled) {
+  background: rgba(44, 30, 22, 0.95);
+  border-color: var(--gold);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
+}
+
+.ttt-cell.mark-a span {
+  color: var(--gold);
+  text-shadow: 0 0 16px rgba(212, 175, 55, 0.5);
+}
+
+.ttt-cell.mark-s span {
+  color: #e2a876;
+  text-shadow: 0 0 16px rgba(226, 168, 118, 0.5);
+}
+
+.ttt-cell.is-winner {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: var(--gold);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.6);
+  animation: winner-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes winner-pulse {
+  50% {
+    transform: scale(0.96);
+  }
+}
+
+.game-actions-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   2. THIS OR THAT (COUPLE PREFERENCES) STYLES
+   ========================================================================== */
+.quiz-game {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Who Goes First Selector - This or That */
+.starter-selection-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 20px;
+  background: rgba(26, 18, 14, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 8px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+
+.starter-label-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.starter-tag {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.starter-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ivory);
+}
+
+.starter-toggle-pills {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.starter-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 18px;
+  background: rgba(38, 27, 20, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.starter-pill:hover {
+  border-color: var(--gold);
+  background: rgba(52, 38, 28, 0.9);
+}
+
+.starter-pill.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
+}
+
+.starter-name {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ivory);
+}
+
+.starter-pill.is-active .starter-name {
+  color: #120e0b;
+}
+
+.starter-sub {
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(244, 235, 221, 0.65);
+  margin-top: 2px;
+}
+
+.starter-pill.is-active .starter-sub {
+  color: #3d2c1c;
+  font-weight: 600;
+}
+
+.quiz-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.section-card {
+  background: rgba(26, 19, 15, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 8px;
+  padding: 20px 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 220ms ease;
+}
+
+.section-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px);
+}
+
+.section-badge {
+  color: var(--gold);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.section-desc {
+  color: rgba(244, 235, 221, 0.65);
+  font-size: 0.74rem;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.section-samples {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: rgba(14, 10, 8, 0.6);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 0.66rem;
+  color: rgba(212, 175, 55, 0.85);
+  font-style: italic;
+}
+
+/* Question Card */
+.quiz-card-container {
+  width: min(620px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.quiz-player-tag {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.player-1 {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.player-2 {
+  background: rgba(226, 168, 118, 0.2);
+  color: #e2a876;
+  border: 1px solid #e2a876;
+}
+
+.quiz-progress-text {
+  color: rgba(244, 235, 221, 0.6);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.quiz-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(44, 30, 22, 0.8);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+  transition: width 240ms ease;
+}
+
+.quiz-instruction {
+  color: rgba(244, 235, 221, 0.78);
+  font-size: 0.82rem;
+  margin: 0 0 24px;
+}
+
+.quiz-instruction strong {
+  color: var(--gold);
+}
+
+.double-choice-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.choice-card {
+  position: relative;
+  background: rgba(28, 20, 16, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 8px;
+  padding: clamp(24px, 5vh, 40px) 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 220ms ease;
+  min-height: 180px;
+}
+
+.choice-card:hover {
+  border-color: var(--gold);
+  background: rgba(44, 32, 24, 0.95);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+  transform: translateY(-4px);
+}
+
+.choice-letter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--gold);
+  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+
+.choice-card:hover .choice-letter-badge {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+.choice-label {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.choice-key {
+  color: rgba(212, 175, 55, 0.6);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.choice-vs-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #120e0b;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Handover Screen */
+.handover-card {
+  padding: 30px 20px;
+}
+
+.handover-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.handover-monogram {
+  font-family: "Cinzel", Georgia, serif;
+  color: var(--gold);
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+
+.handover-title {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 8px;
+}
+
+.handover-subtitle {
+  color: rgba(244, 235, 221, 0.75);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  max-width: 440px;
+  margin: 0 0 18px;
+}
+
+.handover-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 18px;
+  opacity: 0.4;
+}
+
+.handover-prompt {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-family: "Playfair Display", Georgia, serif;
+  margin: 0 0 20px;
+}
+
+/* Results */
+.quiz-results-card {
+  width: min(640px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.score-percent {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 235, 221, 0.65);
+  margin-top: 4px;
+}
+
+.results-verdict-title {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+  margin: 0 0 6px;
+}
+
+.results-verdict-sub {
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0 0 16px;
+}
+
+.results-stat-bar {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  font-size: 0.72rem;
+  color: rgba(244, 235, 221, 0.7);
+}
+
+.results-stat-bar strong {
+  color: var(--gold);
+}
+
+.results-breakdown-list {
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breakdown-headline {
+  color: var(--gold);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0 0 8px;
+}
+
+.breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(24, 18, 14, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 6px;
+  text-align: left;
+}
+
+.breakdown-row.is-match {
+  border-left: 3px solid var(--gold);
+}
+
+.breakdown-row.is-mismatch {
+  border-left: 3px solid #e2a876;
+}
+
+.breakdown-qnum {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.74rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.breakdown-body {
+  flex: 1;
+}
+
+.breakdown-question {
+  color: var(--ivory);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.breakdown-picks {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.68rem;
+  color: rgba(244, 235, 221, 0.7);
+}
+
+.badge-match {
+  padding: 3px 8px;
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold);
+  border-radius: 10px;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.badge-diff {
+  padding: 3px 8px;
+  background: rgba(226, 168, 118, 0.18);
+  color: #e2a876;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+
+.results-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   4. SPEED MATH STYLES
+   ========================================================================== */
+.math-game {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.math-start-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.math-icon-badge {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.08);
+  padding: 8px 22px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.math-high-score {
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.math-mode-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.math-mode-btn {
+  background: rgba(28, 20, 16, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 220ms ease;
+}
+
+.math-mode-btn:hover {
+  border-color: var(--gold);
+  background: rgba(44, 32, 24, 0.95);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+  transform: translateY(-3px);
+}
+
+.mode-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.mode-name {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.mode-desc {
+  color: rgba(244, 235, 221, 0.65);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+/* Active Game HUD */
+.math-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px 16px;
+  background: rgba(25, 18, 14, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  margin-bottom: 22px;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hud-label {
+  font-size: 0.58rem;
+  color: rgba(244, 235, 221, 0.55);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hud-val {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.lives-val {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 26px;
+  margin-top: 3px;
+}
+
+.life-pip {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  transition: all 220ms ease;
+}
+
+.life-pip.is-alive {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+  border: 1px solid rgba(255, 235, 170, 0.9);
+}
+
+.life-pip.is-lost {
+  background: rgba(244, 235, 221, 0.12);
+  border: 1px solid rgba(244, 235, 221, 0.3);
+  transform: scale(0.8);
+}
+
+.timer-item.is-urgent .timer-val {
+  color: #ff5555;
+  animation: urgent-pulse 1s infinite;
+}
+
+@keyframes urgent-pulse {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.math-arena {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equation-card {
+  width: 100%;
+  min-height: 150px;
+  background: rgba(14, 10, 8, 0.95);
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.7);
+  transition: all 180ms ease;
+}
+
+.equation-text {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.equation-card.flash-correct {
+  border-color: #4ade80;
+  box-shadow: 0 0 30px rgba(74, 222, 128, 0.6);
+  background: rgba(20, 45, 25, 0.95);
+}
+
+.equation-card.flash-wrong {
+  border-color: #f87171;
+  box-shadow: 0 0 30px rgba(248, 113, 113, 0.6);
+  background: rgba(45, 18, 18, 0.95);
+}
+
+.math-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.math-choice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 180ms ease;
+  user-select: none;
+}
+
+.math-choice-btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-true {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.22) 0%, rgba(20, 83, 45, 0.35) 100%);
+  border: 1.5px solid rgba(74, 222, 128, 0.6);
+  color: #86efac;
+}
+
+.btn-true:hover {
+  background: rgba(34, 197, 94, 0.35);
+  border-color: #4ade80;
+  box-shadow: 0 0 24px rgba(74, 222, 128, 0.35);
+}
+
+.btn-false {
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.22) 0%, rgba(127, 29, 29, 0.35) 100%);
+  border: 1.5px solid rgba(248, 113, 113, 0.6);
+  color: #fca5a5;
+}
+
+.btn-false:hover {
+  background: rgba(239, 68, 68, 0.35);
+  border-color: #f87171;
+  box-shadow: 0 0 24px rgba(239, 68, 68, 0.35);
+}
+
+.math-btn-icon {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.math-btn-text {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.math-btn-shortcut {
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+  margin-top: 4px;
+}
+
+/* Math Game Over */
+.math-gameover-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.highscore-badge {
+  padding: 4px 14px;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  color: var(--gold);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.gameover-monogram {
+  font-family: "Cinzel", Georgia, serif;
+  color: var(--gold);
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+
+.gameover-title {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.2rem;
+  margin: 0 0 6px;
+}
+
+.gameover-sub {
+  color: rgba(244, 235, 221, 0.7);
+  font-size: 0.8rem;
+  margin: 0 0 20px;
+}
+
+.gameover-score-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.hero-score {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.2rem, 8vw, 4.8rem);
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.hero-label {
+  color: rgba(244, 235, 221, 0.6);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.gameover-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  padding: 12px 8px;
+  background: rgba(26, 19, 15, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-box .stat-number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.stat-box .stat-name {
+  font-size: 0.55rem;
+  color: rgba(244, 235, 221, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.gameover-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments for Games
+   ========================================================================== */
+@media (max-width: 768px) {
+  .games-hub-container {
+    padding: clamp(74px, 10vh, 90px) 4px 44px;
+  }
+
+  .games-directory-top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .games-list-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .game-list-card {
+    padding: 14px 16px;
+  }
+
+  .starter-selection-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 14px 14px;
+    gap: 12px;
+  }
+
+  .starter-toggle-pills {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .starter-pill {
+    flex: 1;
+  }
+
+  .game-controls-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .control-segmented-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .double-choice-box {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .choice-card {
+    min-height: 120px;
+    padding: 18px 12px 14px;
+  }
+
+  .choice-vs-badge {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: -6px auto;
+  }
+
+  .math-mode-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .math-actions-row {
+    gap: 10px;
+  }
+}
